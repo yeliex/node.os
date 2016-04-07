@@ -1,6 +1,6 @@
 {
   "name": "node.os",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "OS detect for both nodejs and browser",
   "main": "index.js",
   "scripts": {

@@ -24,7 +24,7 @@ console.log(os.platform); // the same as require("os").platform()
 const os = require("node.os"); // return os object
 
 console.log(os.os); // win,osx,linux,ios,android,etc
-console.log(os.platform); // browser
+console.log(os.platform); // browser/nw(node webkit)
 ````
 
 ## Other Params:
@@ -34,5 +34,7 @@ console.log(os.platform); // browser
 - isLinux
 - isIOS
 - isAndroid
-- isBrowser
+- isBrowser // return 'true' when platform is 'browser' or 'nw'
+- isOnlyBrowser // return 'true' only when platform is 'browser'
+- isNW
 ````

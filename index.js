@@ -6,8 +6,13 @@
     module.exports = (function () {
         var os;
         var that = require("os");
-        switch (that.platform()) {
+        var platform = that.platform();
+        if (global && global.nw) {
+            platform = "nw";
+        }
+        switch (platform) {
             case "browser":
+            case "nw":
             {
                 // 浏览器时,正则判断US
                 os = (function () {
@@ -53,10 +58,16 @@
             return os == "android";
         }());
         that.isBrowser = (function () {
+            return platform == "browser" || platform == "nw";
+        }());
+        that.isOnlyBrowser = (function () {
             return platform == "browser";
         }());
+        that.isNW = (function () {
+            return platform == "nw";
+        }());
         that.os = os;
-        that.platform = that.platform();
+        that.platform = platform;
         return that;
     }());
 }());
