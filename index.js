@@ -5,7 +5,7 @@
 (function () {
     module.exports = (function () {
         var os;
-        var that = require("os");
+        var that = Object.assign({}, require("os"));
         var platform = that.platform();
         if (global && global.nw) {
             platform = "nw";
