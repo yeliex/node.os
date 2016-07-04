@@ -27,6 +27,14 @@ console.log(os.os); // win,osx,linux,ios,android,etc
 console.log(os.platform); // browser/nw(node webkit)
 ````
 
+## Use with html
+```html
+<script src='/node_modules/node.os/dist/index.js'></script>
+<script>
+console.log(window.os)
+</script>
+```
+
 ## Other Params:
 ```js
 - isWin
@@ -34,7 +42,9 @@ console.log(os.platform); // browser/nw(node webkit)
 - isLinux
 - isIOS
 - isAndroid
-- isBrowser // return 'true' when platform is 'browser' or 'nw'
+- isBrowser // return 'true' when platform is 'browser' or 'nw' or 'Electron' or 'wechat'
 - isOnlyBrowser // return 'true' only when platform is 'browser'
 - isNW
+- isWechat
+- isElectron
 ````
