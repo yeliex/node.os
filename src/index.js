@@ -4,7 +4,7 @@
 
 (function () {
   const init = (function () {
-    let os;
+    let OS = '';
     const that = Object.assign({}, require("os"));
     let platform = that.platform();
     let isWechat = (typeof navigator === 'object' && navigator.userAgent && navigator.userAgent.match(/MicroMessenger/g));
@@ -19,7 +19,7 @@
       case "nw":
       {
         // 浏览器时,正则判断US
-        os = (function () {
+        OS = (function () {
           var release = require("os").release();
           if (release.match(/iPad|iPhone/g)) {
             return "ios";
@@ -42,24 +42,24 @@
       }
       case "darwin":
       {
-        os = "osx";
+        OS = "osx";
         break;
       }
     }
     that.isWin = (function () {
-      return os === "win";
+      return OS === "win";
     }());
     that.isOSX = (function () {
-      return os === "osx";
+      return OS === "osx";
     }());
     that.isLinux = (function () {
-      return os === "linux";
+      return OS === "linux";
     }());
     that.isIOS = (function () {
-      return os === "ios";
+      return OS === "ios";
     }());
     that.isAndroid = (function () {
-      return os === "android";
+      return OS === "android";
     }());
     that.isBrowser = (function () {
       return platform === "browser" || platform === "nw" || isElectron || isWechat;
@@ -72,7 +72,7 @@
     }());
     that.isElectron = isElectron;
     that.isWechat = isWechat;
-    that.os = os;
+    that.os = OS;
     that.platform = isWechat ? 'wechat' : isElectron ? 'Electron' : platform;
     return that;
   }());
