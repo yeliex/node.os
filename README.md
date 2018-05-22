@@ -1,5 +1,7 @@
 # node.os
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/yeliex/node.os.svg)](https://greenkeeper.io/)
+
 [![npm](https://img.shields.io/npm/v/node.os.svg?style=flat-square)](https://www.npmjs.com/package/node.os)
 
 OS detect for both nodejs and browser 
